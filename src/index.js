@@ -35,20 +35,20 @@
         $(fileBtn).click(function () {
             setTimeout(function () {
                 $(iframe).ready(function(){
-                var iframeDocument = iframe.contentWindow.document;
-                var downloadBtns = $(iframeDocument).find('a.download');
-                $(downloadBtns).each(function () {
-                    var li = $(this).parent();
-                    var k = getPrm(this.href, 'k');
-                    var code = getPrm(this.href, 'code');
-                    var shareLink = 'https://iwx.mail.qq.com/ftn/download?func=3&key=' + k + '&code=' + code + '&k=' + k;
-                    var downLink = 'https://iwx.mail.qq.com/ftn/download?func=4&key=' + k + '&code=' + code + '&k=' + k;
-                    var shareBtn = '<a class="ft_i_action send" target="_blank" href="' + shareLink + '" hidefocus><b style="margin: 5px;">↪</b>分享</a>';
-                    var downBtn = "<a onclick='prompt(&quot;提取文件直链&quot;,&quot;" + downLink + "&quot;)'><b style='margin: 5px;'>↓</b>直链</a>";
-                    li.append(shareBtn);
-                    li.append(downBtn);
-                })}
-                )
+                    var iframeDocument = iframe.contentWindow.document;
+                    var downloadBtns = $(iframeDocument).find('a.download');
+                    $(downloadBtns).each(function () {
+                        var li = $(this).parent();
+                        var k = getPrm(this.href, 'k');
+                        var code = getPrm(this.href, 'code');
+                        var shareLink = 'https://iwx.mail.qq.com/ftn/download?func=3&key=' + k + '&code=' + code + '&k=' + k;
+                        var downLink = 'https://iwx.mail.qq.com/ftn/download?func=4&key=' + k + '&code=' + code + '&k=' + k;
+                        var shareBtn = '<a class="ft_i_action send" target="_blank" href="' + shareLink + '" hidefocus><b style="margin: 5px;">↪</b>分享</a>';
+                        var downBtn = "<a onclick='prompt(&quot;提取文件直链&quot;,&quot;" + downLink + "&quot;)'><b style='margin: 5px;'>↓</b>直链</a>";
+                        li.append(shareBtn);
+                        li.append(downBtn);
+                    })
+                })
             }, 1000);
         });
     });
